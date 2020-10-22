@@ -13,9 +13,59 @@
 
 <body>
   <header>
-    <h1>The name of your quiz</h1>
+    <h1>Jonah's Quiz</h1>
   </header>
-  <main></main>
+  <main>
+
+    <!-- Welcome Interface -->
+    <div class="welcome-display">
+      <h2 class="welcome-msg">This quiz will test your knowledge on a given subject. Click "Begin" to start your quiz.</h2>
+      <button class="btn-begin">Begin</button>
+    </div>
+
+    <!-- Question Interface -->
+    <div class="question-display">
+      <p>Question <span class="question-number">1</span> of 5</p>
+      <p>Total correct: <span class="total-correct">0</span>.</p>
+      <form>
+        <legend class="question">What is question one?</legend>
+        <ul class="answer-list">
+          <li>
+            <input type="radio" name="answer" id="ans-1">
+            <label for="ans-1">Answer one.</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="ans-2">
+            <label for="ans-2">Answer two.</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="ans-3">
+            <label for="ans-3">Answer three.</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="ans-4">
+            <label for="ans-4">Answer four.</label>
+          </li>
+        </ul>
+        <button type="submit" class="answer-submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Answer Result Interface -->
+    <div class="answer-result">
+      <h2 class="isCorrect">Correct!</h2>
+      <p>The correct answer was "<span class="correct-answer">correct answer</span>".</p>
+      <p>You've correctly answered <span class="total-correct">1</span> out of <span class="question-number">3</span> questions.</p>
+      <button class="btn-next" type="submit">Next</button>
+    </div>
+
+    <!-- Final Results Interface -->
+    <div>
+      <h2>Final Results</h2>
+      <p>You answered <span class="total-correct">1</span> out of 5 questions correctly</p>
+      <button class="btn-try-again" type="submit">Try Again</button>
+    </div>
+  </main>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
   <script src="app.js"></script>
 </body>

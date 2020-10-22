@@ -6,3 +6,100 @@
   * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
   *
 */
+
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  /* align-self: flex-start; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+  font-size: 22px;
+}
+
+button {
+  font-size: 18px;
+  display: block;
+  margin: 19px auto;
+}
+
+
+/* ------ Welcome Display ------ */
+
+.welcome-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-msg {
+  margin-bottom: 0;
+}
+
+/* ------ Question Display ------ */
+
+.question-display {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.question-display p {
+  margin: 4px 0;
+  text-align: center;
+}
+
+form {
+  margin-top: 20px;
+  border: solid black;
+  padding-top: 1em;
+  padding-left: 1em;
+}
+
+li {
+  margin: .5em;
+}
+.answer-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ----- Answer Result Display ----- */
+
+
+
+/* ----- Final Results Display ----- */
+
+
+/* ----- Media Queries ----- */
+
+@media all and (min-width: 768px) {
+  main {
+    width: 80%;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  main {
+    width: 65%;
+  }
+}
+
+/* ----- Hidden Class (Keep at bottom) ----- */
+.hidden {
+  display: none;
+}
