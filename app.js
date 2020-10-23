@@ -9,7 +9,7 @@ const store = {
       answers: [
         {ans: 'For good marital luck, Kirlyam made them eat pigs feet once every week until they were married.', ansId: 'ans0'},
         {ans: 'Alan’s friend chaperoned them at night, with Kirlyam sleeping in the bedroom and Alan sleeping in the living room with his friend.', ansId: 'ans1'},
-        {ans: 'They both purposely sought out others to date in order to test their love', ansId: 'ans2'},
+        {ans: 'They both purposely sought out others to date in order to test their love.', ansId: 'ans2'},
         {ans: 'Alan forbade any physical contact of any kind, including hand holding, if either was on an empty stomach.', ansId: 'ans3'}
       ],
       correctAnswer: {ans: 'Alan’s friend chaperoned them at night, with Kirlyam sleeping in the bedroom and Alan sleeping in the living room with his friend.', ansId: 'ans1'}
@@ -18,8 +18,8 @@ const store = {
       question: 'In Nicole’s and Azan’s relationship, who is more physically aggressive?',
       answers: [
         {ans: 'Neither is physically aggressive.', ansId: 'ans0'},
-        {ans: 'Azan', ansId: 'ans1'},
-        {ans: 'Nicole, although it’s still worth mentioning Azan is ripped', ansId: 'ans2'},
+        {ans: 'Azan.', ansId: 'ans1'},
+        {ans: 'Nicole, although it’s still worth mentioning Azan is ripped.', ansId: 'ans2'},
         {ans: 'Nicole’s 4-year-old daughter.', ansId: 'ans3'}
       ],
       correctAnswer: {ans: 'Nicole, although it’s still worth mentioning Azan is ripped', ansId: 'ans2'}
@@ -104,8 +104,8 @@ function generateQuestion(questions, index) {
   const qInfo = questions[index];
   const answers = qInfo.answers.map(answer => generateAnswerElement(answer));
   return `<div class="question-display">
-            <p> ${index+1} of ${questions.length}</p>
-            <p>Total correct: ${store.score}.</p>
+            <h2 class="current-q"> Question ${index+1} of ${questions.length}</h2>
+            <h2>Total correct: ${store.score}</h2>
             <form>
               <legend class="question">${qInfo.question}</legend>
               <ul class="answer-list">
@@ -131,10 +131,12 @@ function generateQuestionResults(questions, index) {
   //Generates template for current question results.
   console.log("generateQuestionResults ran.")
   return `<div class="answer-result">
-            <h2>${checkUserAnswer(questions, index)}</h2>
-            <p>The correct answer was ${questions[index].correctAnswer.ans}</p>
-            <p>You've correctly answered ${store.score} out of ${store.questionsAnswered+1} questions.</p>
-            <button class="btn-next">Next</button>
+            <div class="correct-result">
+              <h2>${checkUserAnswer(questions, index)}</h2>
+              <p>The correct answer was '${questions[index].correctAnswer.ans}'</p>
+              <p class="score-update">You've correctly answered ${store.score} out of ${store.questionsAnswered+1} questions.</p>
+              <button class="btn-next">Next</button>
+            </div>
           </div>`
 
 }
@@ -142,7 +144,7 @@ function generateQuestionResults(questions, index) {
 function generateFinalResults() {
   //Generates template for final results.
   console.log("generateFinalResults ran.")
-  return `<div>
+  return `<div class="final-results">
             <h2>Final Results</h2>
             <p>You answered ${store.score} out of ${store.questions.length} questions correctly</p>
             <button class="btn-try-again">Try Again</button>
