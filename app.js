@@ -186,13 +186,22 @@ function handleBegin() {
   });
 }
 
+
+
+
+
 function handleSubmit() {
   //Handles click on 'Submit' button
   $('main').submit(function(event) {
     event.preventDefault();
     console.log('handleSubmit ran.');
-    store.questionsAnswered++;
-    renderQuiz();
+    if ($('ul li input[name=answer]:checked').length > 0) {
+      store.questionsAnswered++;
+      renderQuiz();
+    } else {
+      alert('Please select an answer.');
+    }
+    
   });
 }
 
